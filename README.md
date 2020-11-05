@@ -25,7 +25,7 @@ This example will use an Ansible playbook to automatically install SSMTP in the 
 - cryptography
 - ansible[azure]
 
-# NOTE
+# CREATE KEYSTORE
 - install keytool to generate the keystore: yum install java-1.8.0-openjdk
 - create directory /opt/jenkins/ if not exists
 - create keystore with password 'password123' or update Dockerfile to your own password setting
