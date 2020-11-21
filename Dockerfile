@@ -2,7 +2,6 @@ FROM openshift/jenkins-2-centos7
 
 USER root
 
-# RUN yum update -y
 RUN yum install -y sudo
 RUN echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 RUN echo "default ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
@@ -26,7 +25,4 @@ RUN perl -pi -e 's/[#]?\s*FromLineOverride=(.*?)/FromLineOverride=$1/' /etc/ssmt
 
 USER jenkins
 
-ENV JENKINS_OPTS --httpPort=8080 --httpsPort=8443 --httpsKeyStore=/var/lib/jenkins/my-release-key.keystore --httpsKeyStorePassword=password123
-
-EXPOSE 8443
-
+EXPOSE 8080
